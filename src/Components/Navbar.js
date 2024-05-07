@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import Logo from "../Assets/Logo.svg";
 import { BsCart2 } from "react-icons/bs";
@@ -6,7 +5,6 @@ import { HiOutlineBars3 } from "react-icons/hi2";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -16,6 +14,8 @@ import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
+
+import { Link } from 'react-scroll';
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -47,10 +47,18 @@ const Navbar = () => {
         <img src={Logo} alt="" />
       </div>
       <div className="navbar-links-container">
+      <Link smooth={true} to='home'>
         <a href="">Home</a>
+      </Link>
+      <Link smooth={true} to='about'>
         <a href="">About</a>
+      </Link>
+      <Link smooth={true} to='testimonial'>
         <a href="">Testimonials</a>
+      </Link>
+      <Link smooth={true} to='contact'>
         <a href="">Contact</a>
+      </Link>
         <a href="">
           <BsCart2 className="navbar-cart-icon" />
         </a>
@@ -76,7 +84,7 @@ const Navbar = () => {
               </ListItem>
             ))}
           </List>
-          <Divider />
+          {/* <Divider /> */}
         </Box>
       </Drawer>
     </nav>
